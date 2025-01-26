@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="endpoints.js"></script>
 </head>
 <body>
     <div id="root"></div>
@@ -73,18 +74,21 @@
                                 Purdue Fitness
                             </h1>
                             <input 
+                                id="purdue-email"
                                 type="text"
                                 placeholder="Purdue Email" 
                                 className="w-full bg-white p-3 rounded-lg mb-4 text-black"
                             />
                             <input 
+                                id="purdue-id"
                                 type="text"
                                 placeholder="Purdue ID" 
                                 className="w-full bg-white p-3 rounded-lg mb-4 text-black"
                             />
                             <button 
                                 className="w-full bg-yellow-500 text-black p-3 rounded-lg"
-                                onClick={() => setScreen('Interests')}
+                                onClick={() => { setScreen('Interests'); registerUser(); }}
+                                
                             >
                                 Login
                             </button>
