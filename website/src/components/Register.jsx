@@ -10,11 +10,26 @@ export default function Register() {
     const [purdueId, setPurdueId] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleRegister = () => {
-        console.log("Purdue Email:", purdueEmail);
-        console.log("Purdue ID:", purdueId);
-        console.log("Password:", password);
-        // Add your registration logic here
+
+    const handleRegister = async () => {
+        const url = "http://localhost:3000/api/register";
+
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    purdueEmail: purdueEmail,
+                    purdueId: purdueId,
+                    password: password
+                })
+            });
+        }
+        catch (error) {
+            console.error('Error:', error);
+        }
     };
 
     return (
