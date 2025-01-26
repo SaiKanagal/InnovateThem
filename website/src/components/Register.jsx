@@ -1,7 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function Register() {
+
+    const navigate = useNavigate();
+
     const [purdueEmail, setPurdueEmail] = useState("");
     const [purdueId, setPurdueId] = useState("");
     const [password, setPassword] = useState("");
@@ -44,7 +48,7 @@ export default function Register() {
             />
             <button 
                 className="w-full bg-yellow-500 text-black p-3 rounded-lg"
-                onClick={handleRegister} // Handle button click
+                onClick={() => { handleRegister(); navigate('/interests'); }} // Handle button click
             >
                 Register
             </button>
