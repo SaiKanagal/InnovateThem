@@ -24,6 +24,7 @@ class User(db.Model):
 
 @app.route("/")
 def hello_world():
+    
     return "<p>Hello World</p>"
 
 @app.route("/register", methods=['POST'])
